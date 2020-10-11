@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     color: #444444;
-
+    background-color: #e1e7ed;
     /* отступ, чтобы компенсировать высоту навбара */
     margin-top: 60px;
 }
@@ -15,7 +15,7 @@ body {
 
 .navbar {
     display: block;
-    background: #6a7dff;
+    background: #02918c;
     position: fixed;
     top: 0;
     right: 0;
