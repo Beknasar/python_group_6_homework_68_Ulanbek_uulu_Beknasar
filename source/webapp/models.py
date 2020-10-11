@@ -52,6 +52,7 @@ class Comment(models.Model):
                                related_name='comments', verbose_name='Автор')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Время создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Время изменения')
+    like_count = models.IntegerField(verbose_name="Счётчик лайков", default=0)
 
     def __str__(self):
         return self.text[:20]
@@ -92,7 +93,7 @@ class CommentLike(models.Model):
     comment = models.ForeignKey('webapp.Comment', on_delete=models.CASCADE, related_name='likes', verbose_name='Комментарии')
 
     def __str__(self):
-        return f'{self.user.username} - {self.comment.text}'
+        return f'{self.user.username} - {self.comment.text[:20]}'
 
     class Meta:
         verbose_name = 'Лайк'
